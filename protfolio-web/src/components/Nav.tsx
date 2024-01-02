@@ -3,13 +3,18 @@ import Link from "next/link"; // link nextjs
 import { usePathname } from "next/navigation"; // hooks nextjs
 import { motion } from "framer-motion"; // framer motion
 
+type Links = {
+  path: string
+  name: string
+}
+
 type Props = {
   containerStyles: string;
   linkStyles: string;
   underlineStyles?: string;
 };
 
-const links = [
+const links: Links[] = [
   { path: "/", name: "home" },
   { path: "/projects", name: "My projects" },
   { path: "/contact", name: "contact" },

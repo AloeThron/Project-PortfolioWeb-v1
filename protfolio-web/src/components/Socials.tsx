@@ -10,12 +10,17 @@ import {
   RiInstagramFill,
 } from "react-icons/ri";
 
+type Icons = {
+  path: string
+  name: any
+}
+
 type Props = {
   containerStyles: string;
   iconsStyles: string;
 };
 
-const icons = [
+const icons: Icons[] = [
   {
     path: "/",
     name: <RiYoutubeFill />,

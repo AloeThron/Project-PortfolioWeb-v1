@@ -13,20 +13,14 @@ export default function Header({}: Props) {
   const [header, setHeader] = useState(false);
   const pathname = usePathname();
 
-  useEffect(() => {
-    const scollYPos = window.addEventListener("scroll", () => {
-      window.scrollY > 50 ? setHeader(true) : setHeader(false);
-    });
+  // useEffect(() => {
+  //   const scollYPos = window.addEventListener("scroll", () => {
+  //     window.scrollY > 50 ? setHeader(true) : setHeader(false);
+  //   });
 
-    // function scollYPos() {
-    //   window.addEventListener("scroll", () => {
-    //     window.scrollY > 50 ? setHeader(true) : setHeader(false);
-    //   });
-    // }
-
-    // remove event
-    return () => window.removeEventListener("scroll", scollYPos);
-  });
+  //   // remove event
+  //   return () => window.removeEventListener("scroll", scollYPos);
+  // });
 
   return (
     <div
