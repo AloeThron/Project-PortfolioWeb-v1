@@ -13,21 +13,26 @@ export default function Header({}: Props) {
   const [header, setHeader] = useState(false);
   const pathname = usePathname();
 
-  // useEffect(() => {
-  //   const scollYPos = window.addEventListener("scroll", () => {
-  //     window.scrollY > 50 ? setHeader(true) : setHeader(false);
-  //   });
+  useEffect(() => {
+    function updateScollYPos() {
+      window.addEventListener("scroll", () => {
+        window.scrollY > 50 ? setHeader(true) : setHeader(false);
+      });
+    }
 
-  //   // remove event
-  //   return () => window.removeEventListener("scroll", scollYPos);
-  // });
+    // event
+    window.addEventListener("scroll", updateScollYPos);
+
+    // remove event
+    return () => window.removeEventListener("scroll", updateScollYPos);
+  });
 
   return (
     <div
       className={`${
         header
           ? "py-4 bg-white shadow-lg dark:bg-accent"
-          : "py-6 dark:bg-transparent"
+          : "py-6 bg-white dark:bg-black"
       } sticky top-0 z-30 transition-all ${pathname === "/" && "bg-[#fef9f5]"}`}
     >
       <div className="container mx-auto">
