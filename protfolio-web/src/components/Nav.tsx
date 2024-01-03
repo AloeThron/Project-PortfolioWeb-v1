@@ -4,9 +4,9 @@ import { usePathname } from "next/navigation"; // hooks nextjs
 import { motion } from "framer-motion"; // framer motion
 
 type Links = {
-  path: string
-  name: string
-}
+  path: string;
+  name: string;
+};
 
 type Props = {
   containerStyles: string;

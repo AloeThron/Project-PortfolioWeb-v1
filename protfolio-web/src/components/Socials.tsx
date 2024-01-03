@@ -2,46 +2,12 @@
 
 import Link from "next/link";
 import React from "react";
-import {
-  RiYoutubeFill,
-  RiLinkedinFill,
-  RiGithubFill,
-  RiFacebookFill,
-  RiInstagramFill,
-} from "react-icons/ri";
-
-type Icons = {
-  path: string
-  name: any
-}
+import { icons } from "@/app/data/socials";
 
 type Props = {
   containerStyles: string;
   iconsStyles: string;
 };
-
-const icons: Icons[] = [
-  {
-    path: "/",
-    name: <RiYoutubeFill />,
-  },
-  {
-    path: "/",
-    name: <RiLinkedinFill />,
-  },
-  {
-    path: "/",
-    name: <RiGithubFill />,
-  },
-  {
-    path: "/",
-    name: <RiFacebookFill />,
-  },
-  {
-    path: "/",
-    name: <RiInstagramFill />,
-  },
-];
 
 export default function Socials({ containerStyles, iconsStyles }: Props) {
   return (

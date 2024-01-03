@@ -8,97 +8,14 @@ import "swiper/css"; // swiper styles
 import "swiper/css/pagination"; // swiper styles
 import { Pagination } from "swiper/modules"; // swiper modules
 import ProjectCard from "./ProjectCard"; // swiper component
+import {projectData} from '../app/data/projects'
 
 type Props = {};
-
-type ProjectData = {
-  image: string;
-  category: string;
-  name: string;
-  description: string;
-  link: string;
-  github: string;
-};
-
-const projectData: ProjectData[] = [
-  {
-    image: "/work/3.png",
-    category: "react js",
-    name: "Nexa Website",
-    description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit.",
-    link: "/",
-    github: "/",
-  },
-  {
-    image: "/work/4.png",
-    category: "Solstice js",
-    name: "Nexa Website",
-    description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit.",
-    link: "/",
-    github: "/",
-  },
-  {
-    image: "/work/2.png",
-    category: "next js",
-    name: "Lumina Website",
-    description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit.",
-    link: "/",
-    github: "/",
-  },
-  {
-    image: "/work/1.png",
-    category: "next js",
-    name: "Evolve Website",
-    description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit.",
-    link: "/",
-    github: "/",
-  },
-  {
-    image: "/work/3.png",
-    category: "next js",
-    name: "Ignite Website",
-    description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit.",
-    link: "/",
-    github: "/",
-  },
-  {
-    image: "/work/4.png",
-    category: "next js",
-    name: "Envision Website",
-    description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit.",
-    link: "/",
-    github: "/",
-  },
-  {
-    image: "/work/1.png",
-    category: "fullstack",
-    name: "Serenity Website",
-    description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit.",
-    link: "/",
-    github: "/",
-  },
-  {
-    image: "/work/3.png",
-    category: "fullstack",
-    name: "Nova Website",
-    description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit.",
-    link: "/",
-    github: "/",
-  },
-  {
-    image: "/work/2.png",
-    category: "fullstack",
-    name: "Zenith Website",
-    description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit.",
-    link: "/",
-    github: "/",
-  },
-];
 
 export default function Work({}: Props) {
   return (
     <div className="relative mb-12 xl:mb-48">
-      <div className="container mx-auto">
+      <div className="container mx-auto relative">
         {/* text */}
         <div className="max-w-[400px] mx-auto xl:mx-0 text-center xl:text-left mb-12 xl:h-[400px] flex flex-col justify-center items-center xl:items-start">
           <h2 className="section-title mb-4">Latest Projects</h2>

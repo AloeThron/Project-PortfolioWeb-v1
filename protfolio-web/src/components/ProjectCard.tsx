@@ -21,7 +21,7 @@ export default function ProjectCard({ project }: Props) {
     <Card className="group overflow-hidden relative">
       <CardHeader className="p-0">
         {/* image */}
-        <div className="relative w-full h-[300px] flex items-center justify-center bg-tertiary dark:bg-secondary/40 xl:bg-work_project_bg_light xl:dark:bg-work_project_bg_dark xl:bg-[110%] bg-no-repeat overflow-hidden">
+        <div className="relative w-full h-[300px] flex items-center justify-center bg-tertiary dark:bg-secondary/40 bg-work_project_bg_light dark:bg-work_project_bg_dark bg-no-repeat overflow-hidden bg-center">
           <Image
             className="absolute bottom-0 shadow-2xl"
             src={project.image}

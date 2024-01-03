@@ -13,166 +13,17 @@ import {
   Calendar,
   Briefcase,
 } from "lucide-react";
+import {
+  infoData,
+  educationData,
+  experinceData,
+  skillData,
+  toolData,
+} from "../app/data/about";
 
 type Props = {};
 
-type infoData = {
-  icon: any;
-  text: string;
-};
-
-type Education = {
-  title: string;
-  data: {
-    university: string;
-    qualification: string;
-    years: string;
-  }[];
-};
-
-type Experience = {
-  title: string;
-  data: {
-    company: string;
-    role: string;
-    years: string;
-  }[];
-};
-
-type SkillData = {
-  title: string;
-  data: {
-    name: string;
-  }[];
-};
-
-type ToolData = {
-  title: string;
-  data: {
-    imgPath: string;
-  }[];
-};
-
-const infoData: infoData[] = [
-  {
-    icon: <User2 size={20} />,
-    text: "Ryan Davis",
-  },
-  {
-    icon: <PhoneCall size={20} />,
-    text: "+012 345 6789",
-  },
-  {
-    icon: <MailIcon size={20} />,
-    text: "+012 345 6789",
-  },
-  {
-    icon: <Calendar size={20} />,
-    text: "1998",
-  },
-  {
-    icon: <GraduationCap size={20} />,
-    text: "MS Sci",
-  },
-  {
-    icon: <HomeIcon size={20} />,
-    text: "321, US",
-  },
-];
-
-const educationData: Education[] = [
-  {
-    title: "education",
-    data: [
-      {
-        university: "Ex Univesity",
-        qualification: "BH Sci",
-        years: "2020",
-      },
-      {
-        university: "Ex Univesity",
-        qualification: "BH Sci",
-        years: "2020",
-      },
-      {
-        university: "Ex Univesity",
-        qualification: "BH Sci",
-        years: "2020",
-      },
-    ],
-  },
-];
-
-const experinceData: Experience[] = [
-  {
-    title: "experience",
-    data: [
-      {
-        company: "Ex Univesity",
-        role: "BH Sci",
-        years: "2020",
-      },
-      {
-        company: "Ex Univesity",
-        role: "BH Sci",
-        years: "2020",
-      },
-      {
-        company: "Ex Univesity",
-        role: "BH Sci",
-        years: "2020",
-      },
-    ],
-  },
-];
-
-const skillData: SkillData[] = [
-  {
-    title: "Skills",
-    data: [
-      {
-        name: "HTML",
-      },
-      {
-        name: "CSS",
-      },
-      {
-        name: "HTML",
-      },
-      {
-        name: "HTML",
-      },
-    ],
-  },
-];
-
-const toolData: ToolData[] = [
-  {
-    title: "Tools",
-    data: [
-      {
-        imgPath: "/about/vscode.svg",
-      },
-      {
-        imgPath: "/about/figma.svg",
-      },
-      {
-        imgPath: "/about/notion.svg",
-      },
-      {
-        imgPath: "/about/wordpress.svg",
-      },
-    ],
-  },
-];
-
 export default function About({}: Props) {
-  function getData<T extends Education | Experience | SkillData | ToolData>(
-    arr: T[],
-    title: string
-  ) {
-    return arr.find((item) => item.title === title);
-  }
   return (
     <div className="xl:h-[860px] pb-12 xl:py-24">
       <div className="container mx-auto">
@@ -252,19 +103,11 @@ export default function About({}: Props) {
                       <div className="flex flex-col gap-y-6 items-center xl:items-start">
                         <div className="flex gap-x-4 items-center text-[22px]">
                           <Briefcase />
-                          <h4 className="capitalize font-medium">
-                            {
-                              getData<Experience>(experinceData, "experience")
-                                ?.title
-                            }
-                          </h4>
+                          <h4 className="capitalize font-medium">Experience</h4>
                         </div>
                         {/* list */}
                         <div className="flex flex-col gap-y-8">
-                          {getData<Experience>(
-                            experinceData,
-                            "experience"
-                          )?.data.map((item, index) => {
+                          {experinceData.map((item, index) => {
                             const { company, role, years } = item;
                             return (
                               <div key={index} className="flex gap-x-8 group">
@@ -291,19 +134,11 @@ export default function About({}: Props) {
                       <div className="flex flex-col gap-y-6 items-center xl:items-start">
                         <div className="flex gap-x-4 items-center text-[22px]">
                           <GraduationCap />
-                          <h4 className="capitalize font-medium">
-                            {
-                              getData<Education>(educationData, "education")
-                                ?.title
-                            }
-                          </h4>
+                          <h4 className="capitalize font-medium">Education</h4>
                         </div>
                         {/* list */}
                         <div className="flex flex-col gap-y-8">
-                          {getData<Education>(
-                            educationData,
-                            "education"
-                          )?.data.map((item, index) => {
+                          {educationData.map((item, index) => {
                             const { university, qualification, years } = item;
                             return (
                               <div key={index} className="flex gap-x-8 group">
@@ -338,19 +173,16 @@ export default function About({}: Props) {
                       <h4 className="text-xl font-semibold mb-2">Skills</h4>
                       <div className="border-b border-border mb-4"></div>
                       <div>
-                        {getData<SkillData>(skillData, "Skills")?.data.map(
-                          (item, index) => {
-                            const { name } = item;
-                            return (
-                              <div
-                                key={index}
-                                className="w-2/4 text-center xl:text-left mx-auto xl:mx-0"
-                              >
-                                <div className="font-medium">{name}</div>
-                              </div>
-                            );
-                          }
-                        )}
+                        {skillData.map((item, index) => {
+                          return (
+                            <div
+                              key={index}
+                              className="w-2/4 text-center xl:text-left mx-auto xl:mx-0"
+                            >
+                              <div className="font-medium">{item.name}</div>
+                            </div>
+                          );
+                        })}
                       </div>
                     </div>
                     {/* tools */}
