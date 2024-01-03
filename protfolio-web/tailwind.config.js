@@ -14,10 +14,10 @@ module.exports = {
       padding: "2rem",
     },
     screens: {
-      "sm": "640px",
-      "md": "768px",
-      "lg": "1024px",
-      "xl": "1400px",
+      sm: "640px",
+      md: "768px",
+      lg: "1024px",
+      xl: "1400px",
     },
     extend: {
       colors: {
@@ -87,6 +87,8 @@ module.exports = {
         about_shape_dark: "url(/about/shape-dark.svg)",
         dots_light: "url(/dots-light.svg)",
         dots_dark: "url(/dots-dark.svg)",
+        work_project_bg_light: "url(/work/work_project_bg_light.png)",
+        work_project_bg_dark: "url(/work/work_project_bg_dark.png)",
       },
     },
   },

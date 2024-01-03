@@ -15,7 +15,7 @@
       --primary-foreground: 355.7 100% 97.3%;
       --secondary: 240 4.8% 95.9%;
       --secondary-foreground: 240 5.9% 10%;
-      --tertiary: 27 82% 98%;
+      --tertiary: 127 82% 98%;
       --tertiary-foreground: 240 5.9% 10%;
       --muted: 240 4.8% 95.9%;
       --muted-foreground: 240 3.8% 46.1%;
@@ -40,7 +40,7 @@
       --primary-foreground: 144.9 80.4% 10%;
       --secondary: 240 3.7% 15.9%;
       --secondary-foreground: 0 0% 98%;
-      --tertiary: 27 82% 98%;
+      --tertiary: 127 82% 98%;
       --tertiary-foreground: 240 5.9% 10%;
       --muted: 0 0% 15%;
       --muted-foreground: 240 5% 64.9%;
@@ -90,4 +90,10 @@
 
 .badge {
   @apply z-10 w-[200px] h-[68px] bg-white dark:backdrop-blur-[44px] shadow-2xl p-4 rounded-[10px] flex items-center gap-x-4;
+}
+
+.swiper-horizontal > .section-pagination-bullets .swiper-pagination-bullet,
+.swiper-pagination-horizontal.swiper-pagination-bullets
+  .swiper-pagination-bullet {
+  @apply bg-primary;
 }
